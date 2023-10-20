@@ -36,6 +36,13 @@ body{
     line-height: 1.5;
 
 }
+
+.logo {
+    width: 200px;
+    height: 70px;
+    margin: 0; /* Reduzir margens ao redor da imagem */
+    padding: 0; /* Reduzir preenchimento ao redor da imagem */
+  }
 *{
     margin:0;
     padding:0;
