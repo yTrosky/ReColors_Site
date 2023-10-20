@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReColors - Extensão para daltonismo</title>
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+
+<!-- navbar Começo-->
+
+    <nav class="navbar navbar-expand-lg fixed-top"> 
+        <div class="container">
+            <!-- Marca/logo-->
+            <a class="navbar-brand" href="index.html">ReColors</a>
+  
+            <!-- botão -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+  
+            <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" data-scroll-nav="0" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="1" href="#">Informações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="2" href="#">Exemplos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="3" href="#">Teste de Ishihara</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="4" href="#">Equipe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll-nav="5" href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- navbar Fim -->
+
+<!-- HOME COMEÇO -->
+<section class="home d-flex align-items-center" id="home" data-scroll-index="0">
+    <div class="effect-wrap">
+        <i class="fas fa-plus effect effect-1"></i>
+        <i class="fas fa-plus effect effect-2"></i>
+        <i class="fas fa-circle-notch effect effect-3"></i>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <div class="home-text">
+                    <h1>Extensão para auxílio de daltonicos!</h1>
+                    <p>Disponivel de graça, pronto para te auxiliar durante sua navegação Web!</p>
+                    <div class="home-btn">
+                        <a href="#" class="btn btn-1">Baixar extensão</a>
+                        <button type="button"  class="btn btn-1 video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 text-center">   
+                <div class="home-img">
+                    <div class="circle">
+                    </div>
+                     <img src="img/extension-screenshots/1.png" alt="ReColors">
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- HOME FINAL -->
+
+<!-- informações começo -->
+<section class="features section-padding" id="features" data-scroll-index="1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>Informações e <span>Funções</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel features-carousel">
+                <div class=" feature-item">
+                    <div class="icon"><i class="fa-solid fa-display"></i></div>
+                    <h3>Auxíliar na web</h3>
+                    <p>Ajuda o usuário durante a navegação na internet, cobrindo as possiveis lacunas
+                        e dificuldades enfrentadas pelos deficientes visuais diariamente.
+                    </p>
+                </div>
+                <div class=" feature-item">
+                    <div class="icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Customizar Cores</h3>
+                    <p>Você poderá contar com a extensão para alterar todas as cores nos websites 
+                        visitados de acordo com a necessidade do usuário deficiente visual! 
+                    </p>
+                </div>
+                <div class=" feature-item">
+                    <div class="icon"><i class="fa-solid fa-window-maximize"></i></div>
+                    <h3>Exibir informações</h3>
+                    <p>Exibe todas as informações e imagens da tela, como graficos e textos que podem
+                        ser ilegiveis por conta das cores padrões utilizadas nos websites.
+                    </p>
+                </div>
+                <div class=" feature-item">
+                    <div class="icon"><i class="fa-solid fa-list"></i></div>
+                    <h3>5 Tipos Pré definidos</h3>
+                    <p>A extensão conta com os 5 tipos principais de daltonismo
+                         já definidos para proporcionar uma experiência inclusiva a todos os usuários
+                    </p>
+                </div>
+                <div class=" feature-item">
+                    <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h3>Informações dos tipos</h3>
+                    <p>Durante o uso, após definir o tipo desejado, é exibido informações sobre
+                        o mesmo, explicando tambem as cores que são e serão afetadas!.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- informações fim  -->
+
+<!-- Dados começo -->
+
+
+<section class="fun-facts section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-5 d-flex align-items-center justify-content-center">    
+                <div class="fun-facts-img">
+                    <img src="img/extension-screenshots/2.png" alt="fun facts">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-7">     
+                <div class="section-title">
+                    <h2>Dados sobre <span>Daltonismo</span></h2>
+                </div>
+                <div class="fun-facts-text">
+                    <p>Para podermos compreender melhor a importância dessa condição, 
+                        retiramos alguns dados da Organização Mundial da Saúde e 
+                        o Instituto Brasileiro de Geografia e Estatística sobre daltonismo:
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="fun-fact-item style-1">
+                                <h3>5%</h3>
+                                <span>POPULAÇÃO MUNDIAL</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="fun-fact-item style-2">
+                                <h3>8</h3>
+                                <span>MILHÕES DE BRASILEIROS</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="fun-fact-item style-3">
+                                <h3>8%</h3>
+                                <span>DOS HOMENS</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="fun-fact-item style-4">
+                                <h3>0,4%</h3>
+                                <span>DAS MULHERES</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Dados fim -->
+
+<!-- EXEMPLO EXTENSAO -->
+<section class="app-screenshots section-padding" id="exemplo" data-scroll-index="2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>Aplicando os  <span>Filtros</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel screenshots-carousel">
+                <div class="screenshot-item">
+                    <div class="caption">
+                        <h4>sem Filtro</h4>
+                    </div>
+                    <img src="img/extension-screenshots/one.png" alt="screenshot">
+                </div>
+                <div class="screenshot-item">
+                    <img src="img/extension-screenshots/two.png" alt="screenshot">
+                    <div class="caption">
+                        <h4>Protanopia</h4>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="img/extension-screenshots/six.png" alt="screenshot">
+                    <div class="caption">
+                        <h4>  Deuteranopia</h4>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="img/extension-screenshots/for.png" alt="screenshot">
+                    <div class="caption">
+                        <h4>Tritanopia</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- EXEMPLO EXTENSAO FIM -->
+
+
+
+<!-- teste de ishihara -->
+
+
+<section class="teste-ishihara section-padding" data-scroll-index="3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>Teste de <span>Ishihara</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="teste-text">
+                    <h1>Realize o teste de ishihara agora mesmo 
+                        <br>e obtenha os resultados</h1>
+                        <a href="teste.html" class="btn btn-2 btn-large">Realizar teste</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- teste de ishihara fim -->
+
+
+
+<!-- DOWNLOAD começo -->
+<section class="app-download section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>Baixar <span>Extensão!</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="app-download-item">
+                    <i class="fa-brands fa-opera"></i>
+                    <h3>Opera Extensions</h3>
+                    <p>A extensão ReColors tambem é compativel com o navegador Opera!.
+                    </p>
+                    <a href="#" class="btn btn-2">Baixar agora!</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="app-download-item">
+                    <i class="fa-brands fa-google"></i>
+                    <h3>Chrome Web Store</h3>
+                    <p>Esse botão irá te redirecionar para a pagina da nossa extensão
+                        na loja do Chrome.
+                    </p>
+                    <a href="#" class="btn btn-2">Baixar agora!</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="app-download-item">
+                    <i class="fa-brands fa-edge"></i>
+                    <h3>Edge Extensions</h3>
+                    <p>A extensão ReColors tambem é compativel com o navegador ⠀Edge!.
+                    </p>
+                    <a href="#" class="btn btn-2">Baixar agora!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- DOWNLOAD FIM -->
+
+<!-- como funcionamos -->
+<div class="how-it-works section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" col-lg-8">
+                <div class="section-title">
+                    <h2>Como <span>Funciona</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="how-it-works-item line-right">
+                    <div class="step">1</div>
+                    <h3>Baixar</h3>
+                    <p>O primeiro passo para entender como a extensão funciona,
+                        é baixar ela e instalar em seu navegador.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="how-it-works-item line-right">
+                    <div class="step">2</div>
+                    <h3>Abrir</h3>
+                    <p>Hora de por a mão na massa! Agora que baixou, você pode abrir a interface
+                        e escolher o filtro desejado!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="how-it-works-item line-right">
+                    <div class="step">3</div>
+                    <h3>Filtro</h3>
+                    <p>Após ativação, o filtro é aplicado nas cores que há maior dificuldade
+                        de visualização.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="how-it-works-item">
+                    <div class="step">4</div>
+                    <h3>Aproveite!</h3>
+                    <p>Agora que o filtro foi aplicado, você pode desativar ou ativar
+                        a extensão quando quiser pela interface!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- como funcionamos fim -->
+
+<!-- equipe parte-->
+<section class="team section-padding" id="team" data-scroll-index="4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>Membros da <span>Equipe</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel team-carousel">
+                <div class="team-item">
+                    <img src="img/team/1.png" alt="team">
+                    <h3>Renato Botura</h3>
+                    <span>Programador</span>
+                </div>
+                <div class="team-item">
+                    <img src="img/team/2.png" alt="team">
+                    <h3>Thiago Cruz</h3>
+                    <span>Desenvolvedor</span>
+                </div>
+                <div class="team-item">
+                    <img src="img/team/3.png" alt="team">
+                    <h3>Kezia Domingos</h3>
+                    <span>Designer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- equipe fim -->
+
+<!-- FAQ começo -->
+<section class="faq section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2><span>Perguntas</span> Frequentes</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div id="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-toggle="collapse" 
+                        data-target="#collapse-01">
+                            <h3>O que é o projeto ReColors?</h3>
+                        </div>
+                        <div class="collapse show" id="collapse-01" data-parent="#accordion">
+                            <div class="accordion-body">
+                                <p>O projeto ReColors foi realizado em grupo para 
+                                    o Trabalho de Conclusão de Curso(TCC) durante o ano de 2023
+                                    na ETEC DA ZONA LESTE!.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header collapsed" data-toggle="collapse" 
+                        data-target="#collapse-02">
+                            <h3>Como foi definido as cores do projeto?</h3>
+                        </div>
+                        <div class="collapse" id="collapse-02" data-parent="#accordion">
+                            <div class="accordion-body">
+                                <p>Com auxílio de pesquisas sobre acessibilidade e uso da ferramenta
+                                    "Adobe Colors", foi possível definir uma paleta de cores
+                                    confortáveis para todos os tipos de daltonismo!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header collapsed" data-toggle="collapse" 
+                        data-target="#collapse-03">
+                            <h3>Qual o principal objetivo do nosso website?</h3>
+                        </div>
+                        <div class="collapse" id="collapse-03" data-parent="#accordion">
+                            <div class="accordion-body">
+                                <p>Visamos com o website, ajudar na divulgação do tema e do projeto,
+                                    pois existe uma grande falta de divulgação de temas como esse!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header collapsed" data-toggle="collapse" 
+                        data-target="#collapse-04">
+                            <h3>Como é posivel nos apoiar?</h3>
+                        </div>
+                        <div class="collapse" id="collapse-04" data-parent="#accordion">
+                            <div class="accordion-body">
+                                <p>O meio que achamos de receber suporte, é a divulgação do projeto,
+                                    para que mais pessoas fiquem cientes do tema e que nosso projeto consiga
+                                    ajudar o máximo de pessoas!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+
+
+<!-- FAQ fim -->
+
+<!-- contato começo -->
+<section class="contact section-padding" id="contact" data-scroll-index="5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>Entre em <span>Contato!</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <div class="contact-info">
+                    <h3>Dúvidas e suporte</h3>
+                    <div class="contact-info-item">
+                        <i class="fas fa-location-arrow"></i>
+                        <h4>Nossa localização!</h4>
+                        <p>São paulo - SP</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Escreva para nós!</h4>
+                        <p>ReColors@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-7">
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/teamrecolors@gmail.com" method="POST" class="form">
+                        <input type="hidden" name="_next" value="https://recolors.vercel.app">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" name="name" id="name" placeholder="Seu Nome"
+                                        class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" name="email" id="email" placeholder="Seu Email"
+                                        class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="text" name="subject" id="subject" placeholder="Assunto"
+                                        class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <textarea name="message" id="message" placeholder="Mensagem"
+                                        class="form-control" required></textarea>
+                                </div>
+                                <input type="hidden" name="_captcha" value="false" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button id="sendMessageButton" type="submit" class="btn btn-2">Enviar Mensagem</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contato fim -->
+
+<!-- pezinho começo -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Sobre nós</h3>
+                    <p>Somos uma equipe de 3 pessoas comandando todo o projeto,
+                        visando ajudar o maximo de pessoas possiveis!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Recolors Links</h3>
+                    <ul>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Atalhos rapidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Informações</a></li>
+                        <li><a href="#exemplo">Exemplos</a></li>
+                        <li><a href="#">Teste de Ishihara</a></li>
+                        <li><a href="#team">Equipe</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <ul>
+                        <li><a href="#">Instragram</a></li>
+                        <li><a href="#">Github</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="copyright-text">&copy;2023 ReColors</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- pezinho end -->
+
+<!-- Video telinha popup -->
+<div class="video-popup">
+    <div class="video-popup-inner">
+        <i class="fas fa-times video-popup-close"></i>
+        <div class="iframe-box">
+            <iframe id="player-1" src="https://www.youtube.com/embed/hx0ZwDeBbxM" 
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<!-- Video telinha popup fim -->
+
+
+
+
+<!-- bootstrap -->    
+<script src="js/bootstrap.min.js"></script>
+<!-- jquery -->    
+<script src="js/jquery.min.js"></script>
+
+<!-- popper -->    
+<script src="js/popper.min.js"></script>
+<!-- javascript -->    
+<script src="js/main.js"></script>
+<!-- owl carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Scrollt js -->
+<script src="js/scrollIt.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+ 
+        var button = document.querySelector("#sendMessageButton");
+
+        button.addEventListener("click", function() {
+            alert("O email foi enviado com sucesso!");
+        });
+    });
+    </script>
+
+</body>
+</html>

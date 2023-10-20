@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReColors - Extensão para daltonismo</title>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- navbar Começo-->
+
+    <nav class="navbar navbar-expand-lg fixed-top"> 
+        <div class="container">
+
+            <!-- Marca/logo-->
+            <a class="navbar-brand" href="resultado.html">Prototipação Resultado</a>
+  
+            <!-- botão -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+  
+            <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" data-scroll-nav="0" href="resultado.html">Resultado</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- navbar Fim -->
+
+
+
+
+<!-- HOME COMEÇO -->
+<section class="home" id="home" data-scroll-index="0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="section-title">
+                    <h1>Teste de Ishihara</h1>
+                    <P>Escolha a alternativa que represente o numero exibido na imagem ao lado.</P>
+                </div>
+            </div>
+        </div>
+        <div class="choices">
+            <button class="btn btn-1 two" data-option="Opção A">Número 6</button>
+            <button class="btn btn-1 two" data-option="Opção B">Número 5</button>
+            <p id="user-answers" class="user-answers"></p>
+        </div>
+        <div class="test-image">
+            <img id="test-img" src="img/Teste/6_orange_darkgreen.jpg" alt="Teste de Ishihara">
+        </div>
+        <div class="effect-wrap">
+            <i class="fas fa-plus effect effect-1"></i>
+            <i class="fas fa-plus effect effect-2"></i>
+            <i class="fas fa-circle-notch effect effect-3"></i>
+        </div>
+    </div>
+</section>
+<!-- HOME FINAL -->
+
+
+
+<!-- Sobre o Teste -->
+<section class="faq section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>Sobre o <span>Teste</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div id="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-toggle="collapse" 
+                        data-target="#collapse-01">
+                            <h3>O que é o Teste de ishihara?</h3>
+                        </div>
+                        <div class="collapse show" id="collapse-01" data-parent="#accordion">
+                            <div class="accordion-body">
+                                <p>O teste de ishihara é um exame criado pelo oftalmologista 
+                                    "Shinobu Ishihara" em 1917, utilizado para examinar se os pacientes
+                                    possuiam alguma dificuldade em perceber certas cores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header collapsed" data-toggle="collapse" 
+                        data-target="#collapse-02">
+                            <h3>Como funciona o Teste de Ishihara?</h3>
+                        </div>
+                        <div class="collapse" id="collapse-02" data-parent="#accordion">
+                            <div class="accordion-body">
+                                <p>Conforme o teste é realizado, por conta das cores utilizadas,
+                                    um paciente que possui algum tipo e grau de daltonismo terá dificuldade de
+                                    identificar estes números.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header collapsed" data-toggle="collapse" 
+                        data-target="#collapse-03">
+                            <h3>Tipos de testes</h3>
+                        </div>
+                        <div class="collapse" id="collapse-03" data-parent="#accordion">
+                            <div class="accordion-body">
+                                <p>Existem tipos diferentes de placas de Ishihara:
+                                    <br>
+                                    - Placas com números escondidos, Se você for daltônico, não verá nada.
+                                    <br>
+                                    - Placas que se transformam, as pessoas daltônicas verão um sinal diferente das pessoas sem deficiência visual.
+                                    <br>
+                                    - Placas duplas, um lado para detectar Deuteranopia e o outro para Protanopia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<!-- Sobre o Teste -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- exibição dos resultados na pagina do teste -->
+
+    <div id="results">
+
+    </div>
+
+<br><br>
+
+
+    <div class="group">
+        <div class="group-title"></div>
+        <div class="group-images">
+
+        </div>
+        <div class="error-message" id="error-message-group-1"></div>
+    </div>
+    
+    <div class="group">
+        <div class="group-title"></div>
+        <div class="group-images">
+
+        </div>
+        <div class="error-message" id="error-message-group-2"></div>
+    </div>
+    
+    <div class="group">
+        <div class="group-title"></div>
+        <div class="group-images">
+
+        </div>
+        <div class="error-message" id="error-message-group-3"></div>
+    </div>
+    
+    <div class="group">
+        <div class="group-title"></div>
+        <div class="group-images">
+      
+        </div>
+        <div class="error-message" id="error-message-group-4"></div>
+    </div>
+
+
+<!-- exibição dos resultados na pagina do teste -->
+
+    
+
+
+
+
+
+
+<!-- pezinho começo -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Sobre nós</h3>
+                    <p>Somos uma equipe de 3 pessoas comandando todo o projeto,
+                        visando ajudar o maximo de pessoas possiveis!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Recolors Links</h3>
+                    <ul>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">Github</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Atalhos rapidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Informações</a></li>
+                        <li><a href="#exemplo">Exemplos</a></li>
+                        <li><a href="#">Teste de Ishihara</a></li>
+                        <li><a href="#team">Equipe</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <ul>
+                        <li><a href="#">Github</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="copyright-text">&copy;2023 ReColors</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- pezinho end -->
+
+
+
+
+
+
+
+
+
+
+<!-- jquery -->    
+<script src="js/jquery.min.js"></script>
+
+<!-- popper -->    
+<script src="js/popper.min.js"></script>
+<!-- javascript -->    
+<script src="js/main.js"></script>
+<!-- owl carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Scrollt js -->
+<script src="js/scrollIt.min.js"></script>
+
+<!-- bootstrap -->    
+<script src="js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+</html>
