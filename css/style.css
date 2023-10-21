@@ -26,17 +26,26 @@
 } 
 
 
-body{
-     
+body{   
     font-family: 'Poppins', sans-serif;
     font-size:  16px;
     font-weight: 400;
     overflow-x: hidden;
     background-color: #ffffff;
     line-height: 1.5;
-
 }
-
+body.dark{
+    background-color: var(--bg-dark);
+    --black-100: var(--bg-dark);
+    --black-000: var(--bg-dark);
+    --main-to-dark-color: var(--bg-dark);
+    --dark-to-main-color: var(--main-color);
+    --shadow-black-100:var(--shadow-black-300);
+    --black-alpha-100: rgba(255,255,255,0.05);
+    --black-900: #fff;
+    --black-400: #bbb;
+    --main-color: var(--color-3);
+}
 .logo {
     width: 200px;
     height: 70px;
@@ -125,6 +134,15 @@ ul{
         box-shadow: 0 0 0 0 rgba(255,255,255,0);
     }
 }
+@keyframes zoomInOut_01{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
 .effect-wrap .effect{
     position: absolute;
     z-index: -1;
@@ -184,6 +202,34 @@ ul{
 .owl-carousel button.owl-dot.active{
     background-color: var(--main-color);
 }
+
+/* ---------------------------------
+   Preloader
+----------------------------------*/
+.preloader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2100;
+    background-color: var(--main-to-dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preloader span{
+    display: block;
+    height: 60px;
+    width: 60px;
+    background-color: var(--dark-to-main-color);
+    border-radius: 50%;
+    animation: zoomInOut_01 1s ease infinite;
+}
+
+
+
+
 /* ---------------------------------
    Navbar
 ----------------------------------*/
@@ -876,6 +922,30 @@ ul{
     margin: 50px 0 0;
     border-top: 1px solid rgba(255,255,255,0.2);
 }
+/* ---------------------------------
+   DARK MODE
+---------------------------------*/
+.toggle-theme{
+    position: fixed;
+    right: 0;
+    top: calc(50% - 20px);
+    height: 40px;
+    width: 40px;
+    background-color: var(--dark-to-main-color);
+    z-index: 1200;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: var(--shadow-black-300);
+    font-size: 16px;
+    text-align: center;
+}
+.toggle-theme i{
+    line-height: 40px;
+}
+
+
+
 
 /* ---------------------------------
    RESPONSIVO
@@ -1152,4 +1222,52 @@ PAGINA TRES
 /* ---------------------------------
    DIAGNOSTICO(RESULTADO)
 ---------------------------------*/
+.diag-image{
+    max-width: 450px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    margin-left: 80px;
+    border-radius: 50%;
+    display: inline;
+    animation: bounceTop_01 3s ease infinite;
+}
+
+.diag-image img{
+    border-radius: 50%;
+    width: 300px;
+    max-width: 100%;
+}
+
+.diagnosis {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.diagnosis h2 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 0;
+}
+
+.diagnosis p {
+    font-size: 30px;
+    color: var(--bg-dark);
+    margin-top: 10px;
+    border: 2px solid var(--black-400);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.section-title h3{
+    font-size: 38px;
+    color: var(--bg-dark);
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 0;
+    margin-right: 30px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
 
