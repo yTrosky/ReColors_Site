@@ -1037,6 +1037,78 @@ ul{
     }
 }
 
+/* ---------------------------------
+   RESPONSIVO PAGE 2
+----------------------------------*/
+@media (max-width: 1185px) {
+
+    .custom-button {
+        width: 100%;
+        font-size: 18px;
+        margin-right: 0; /* Remova a margem direita */
+        margin-left: 10px; /* Adicione margem esquerda */
+        margin-bottom: 20px;
+    }
+
+    .test-image img {
+        border-radius: 50%;
+        width: 350px;
+        max-width: 100%;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+        margin-left: 10px; /* Adicione margem esquerda */
+    }
+    
+}
+
+
+
+
+@media (max-width: 802px) {
+    .section-title h1 {
+        margin-left: 20px;
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    .section-title p {
+        margin-left: 20px;
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .choices {
+        margin-left: 20px;
+        margin-top: 50px;
+    }
+
+    .custom-button {
+        width: 100%;
+        font-size: 18px;
+        margin-right: 0;
+    }
+
+    .test-image {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+
+    .test-image img {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+}
+
+
+
+
+
+
+
 /* --------------------------------------------------------
                                                 
 
@@ -1051,6 +1123,9 @@ PAGINA DOIS
 /* ---------------------------------
   Teste CSS
 --------------------------------*/
+
+
+
 .section-title h1{
     color: #ffffff;
     margin-left: 400px;
@@ -1071,13 +1146,11 @@ PAGINA DOIS
     margin-left: 495px;
     margin-top: 100px;
 }
-.btn-1 two{
-    margin-right: 70px;
-    font-size: 1.5rem;
-}
-.btn-1:last-child {
-    margin-right: 0;
-    margin-left: 70px;
+
+.custom-button {
+    width: 260px;
+    font-size: 24px;
+    margin-right: 30px;
 }
 
 .test-image{
@@ -1091,7 +1164,7 @@ PAGINA DOIS
 }
 .test-image img {
     border-radius: 50%;
-    width: 300px;
+    width: 350px;
     max-width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
 }
