@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+
+
 <!-- navbar Começo-->
 
     <nav class="navbar navbar-expand-lg fixed-top"> 
@@ -65,7 +68,7 @@
                         data-target="#collapse-02">
                             <h3>Analisar Respostas</h3>
                         </div>
-                        <div class="collapse" id="collapse-02" data-parent="#accordion">
+                        <div class="collapse show" id="collapse-02" data-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="questions-container">
                                     <!-- Aqui você pode adicionar uma div para as perguntas -->
@@ -88,49 +91,46 @@
 
 
 
+<section class="diagnostico section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="section-title">
+            <h2>Analisando os <span>Resultados</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="diag-image">
+        <img src="img/Teste/12_blue_orange.jpg" alt="image-teste">
+        
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title">
+          <h3>Diagnóstico:</h3>
+        </div>
+        <div id="diagnosis-container" class="diagnosis">
+          <!-- Aqui você pode adicionar uma div para o diagnóstico -->
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
 
-<div id="diagnosis-container">
-    <!-- Aqui você pode adicionar uma div para o diagnóstico -->
-</div>
+
+ <!-- DIAGNOSTICO FINAL -->
 
 
 
 
 
-<!-- DIAGNOSTICO FINAL -->
+ 
 
-
-
-<script>
-    // Use JavaScript para extrair os resultados do LocalStorage e exibi-los nas divs "questions-container" e "diagnosis-container"
-    document.addEventListener("DOMContentLoaded", function () {
-        const questionsContainer = document.getElementById("questions-container");
-        const diagnosisContainer = document.getElementById("diagnosis-container");
-        const storedUserAnswers = JSON.parse(localStorage.getItem("userAnswers"));
-        const storedDiagnosis = localStorage.getItem("diagnosis");
-        const correctAnswers = JSON.parse(localStorage.getItem("correctAnswers"));
-        const groupErrors = JSON.parse(localStorage.getItem("groupErrors"));
-
-        if (storedUserAnswers && storedDiagnosis) {
-            for (let groupIndex = 0; groupIndex < 4; groupIndex++) {
-                // Exibir respostas para imagens no grupo
-                for (let i = groupIndex * 4; i < (groupIndex + 1) * 4; i++) {
-                    const userAnswer = storedUserAnswers[i];
-                    const isCorrect = correctAnswers[i] === userAnswer;
-                    const resultText = isCorrect ? 'Correta' : 'Incorreta';
-                    questionsContainer.innerHTML += `Pergunta ${i + 1}: ${userAnswer} - ${resultText}<br>`;
-                }
-            }
-
-            const diagnosisElement = document.createElement("p");
-            diagnosisElement.innerHTML = "<strong>Diagnóstico:</strong> " + storedDiagnosis;
-            diagnosisContainer.appendChild(diagnosisElement);
-        }
-    });
-</script>
 
 
 
@@ -197,7 +197,14 @@
 
 
 
+<!-- ativar dark mode começo  -->
 
+<div class="toggle-theme">
+    <i class="fas"></i>
+</div>
+
+
+<!-- ativar dark mode fim  -->
 
 
 <!-- jquery -->    
@@ -221,6 +228,55 @@
 
 <!-- bootstrap -->    
 <script src="js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const questionsContainer = document.getElementById("questions-container");
+      const diagnosisContainer = document.getElementById("diagnosis-container");
+      const storedUserAnswers = JSON.parse(localStorage.getItem("userAnswers"));
+      const storedDiagnosis = localStorage.getItem("diagnosis");
+      const correctAnswers = JSON.parse(localStorage.getItem("correctAnswers"));
+      const groupErrors = JSON.parse(localStorage.getItem("groupErrors"));
+  
+      if (storedUserAnswers && storedDiagnosis) {
+        let allGroupsIncorrect = true;
+  
+        for (let groupIndex = 0; groupIndex < 4; groupIndex++) {
+          let groupIncorrect = true;
+  
+          for (let i = groupIndex * 4; i < (groupIndex + 1) * 4; i++) {
+            const userAnswer = storedUserAnswers[i];
+            const isCorrect = correctAnswers[i] === userAnswer;
+            const resultText = isCorrect ? "Correta" : "Incorreta";
+  
+            questionsContainer.innerHTML += `Pergunta ${i + 1}: ${userAnswer} - ${resultText}<br>`;
+  
+            if (isCorrect) {
+              groupIncorrect = false;
+            }
+          }
+  
+          if (!groupIncorrect) {
+            allGroupsIncorrect = false;
+          }
+        }
+  
+        if (allGroupsIncorrect) {
+          // Todas as respostas em todos os grupos estão incorretas
+          const errorElement = document.createElement("p");
+          errorElement.innerHTML =
+            "Você foi diagnosticado com traços muito fortes de daltonismo. Use nossa extensão para cobrir os problemas durante sua navegação Web, porém, é altamente recomendado consultar um profissional para começar o melhor tratamento para o seu caso.";
+          diagnosisContainer.appendChild(errorElement);
+        } else {
+          // Exibir a mensagem de diagnóstico normal
+          const diagnosisElement = document.createElement("p");
+          diagnosisElement.innerHTML = storedDiagnosis;
+          diagnosisContainer.appendChild(diagnosisElement);
+        }
+      }
+    });
+  </script>
+  
 
 </body>
 </html>
