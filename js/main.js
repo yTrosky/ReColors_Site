@@ -1,4 +1,9 @@
 
+$(window).on("load",function(){
+    /*--------------------- carregamento -----------------------*/
+    $(".preloader").fadeOut("slow");
+});
+
 
 $(document).ready(function() {
     /*--------------------- navbar encolher ------------------*/
@@ -94,6 +99,46 @@ $(document).ready(function() {
         $(".navbar-collapse").collapse("hide");
     });
 
+    /*---------------------- ativar dark mode ---------------- */
+    function toggleTheme(){
+        if(localStorage.getItem("recolors-theme") !== null){
+            if(localStorage.getItem("recolors-theme") === "dark"){
+                $("body").addClass("dark");
+            }
+            else{
+                $("body").removeClass("dark");
+            }
+        }
+        updateIcon();
+    }
+    toggleTheme();
+
+    $(".toggle-theme").on("click",function(){
+        $("body").toggleClass("dark");
+        if($("body").hasClass("dark")){
+            localStorage.setItem("recolors-theme","dark")
+        }
+        else{
+            localStorage.setItem("recolors-theme","light")
+        }
+        updateIcon();
+    });
+    function updateIcon(){
+        if($("body").hasClass("dark")){
+            $(".toggle-theme i").removeClass("fa-moon");
+            $(".toggle-theme i").addClass("fa-sun");
+        }
+        else{
+            $(".toggle-theme i").removeClass("fa-sun");
+            $(".toggle-theme i").addClass("fa-moon");
+        }
+    }
+
+
+
+
+
+
     /*---------------------- Alteração de Imagem ---------------- */
     const imagePaths = [
         '6_orange_darkgreen.jpg',
@@ -160,158 +205,172 @@ $(document).ready(function() {
         'Deuteranopia',
         'Protanopia',
         'Tritanopia',
-        'Acromatopsia'
-    ];
-    
-    let groupErrorMessages = [
+        'Acromatopsia',
+      ];
+      
+      let groupErrorMessages = [
         'Você não possui traços de',
         'Você possui traços leves de',
         'Você possui traços moderados de',
         'Você possui traços graves de',
-        'Você possui traços máximos de'
-    ];
-    
-    // Determinar a intensidade do erro em um grupo
-    function getGroupErrorIntensity(groupIndex) {
+        'Você possui traços máximos de',
+      ];
+      
+      function getGroupErrorIntensity(groupIndex) {
         const errorsInGroup = groupErrors[groupIndex];
         const lastImageInGroup = (groupIndex + 1) * 4 - 1;
-    
-        // Verifica se a última imagem do grupo atual está correta
-        const isLastImageCorrect = userAnswers[lastImageInGroup] === correctAnswers[lastImageInGroup];
-    
+      
+        const isLastImageCorrect =
+          userAnswers[lastImageInGroup] === correctAnswers[lastImageInGroup];
+      
+        // Verificar se todas as respostas no grupo estão incorretas
+        const allAnswersIncorrect = groupErrors[groupIndex] === 4;
+      
         if (errorsInGroup === 0 && isLastImageCorrect) {
-            return "Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.";
+          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
         } else if (errorsInGroup === 1 && isLastImageCorrect) {
-            return groupErrorMessages[1];
+          return groupErrorMessages[1];
         } else if (errorsInGroup === 2 && isLastImageCorrect) {
-            return groupErrorMessages[2];
+          return groupErrorMessages[2];
         } else if (errorsInGroup >= 3 && errorsInGroup < 4 && isLastImageCorrect) {
-            return groupErrorMessages[3];
+          return groupErrorMessages[3];
         } else if (errorsInGroup >= 4 || !isLastImageCorrect) {
-            return groupErrorMessages[4];
+          return groupErrorMessages[4];
+        } else if (allAnswersIncorrect) {
+          return 'Todas as respostas estão incorretas neste grupo.';
         }
-    }
-    
-    // Exibir a mensagem de erro do grupo
-    function showGroupErrorMessage(groupIndex) {
+      }
+      function showGroupErrorMessage(groupIndex) {
         const errorIntensity = getGroupErrorIntensity(groupIndex);
         const errorMessageElement = document.getElementById(`error-message-group-${groupIndex + 1}`);
         errorMessageElement.innerHTML = `<strong>${errorIntensity} ${groupNames[groupIndex]}.</strong>`;
-    }
-    
-    function changeImage(chosenOption) {
+      }
+      
+      function changeImage(chosenOption) {
         if (currentImageIndex >= imagePaths.length) {
-            // Todas as imagens já foram respondidas, faça ação de conclusão aqui
-            showTestCompletion();
-            return;
+          showTestCompletion();
+          return;
         }
-    
+      
         const testImage = document.getElementById('test-img');
         testImage.src = 'img/Teste/' + imagePaths[currentImageIndex];
-    
-        // Verifica se a resposta anterior estava correta no grupo atual
+      
         const currentGroupIndex = Math.floor(currentImageIndex / 4);
         if (currentImageIndex % 4 !== 0) {
-            const previousGroupIndex = Math.floor((currentImageIndex - 1) / 4);
-            if (userAnswers[currentImageIndex - 1] !== correctAnswers[currentImageIndex - 1]) {
-                groupErrors[currentGroupIndex] += 1;
-            } else {
-                groupErrors[currentGroupIndex] = groupErrors[previousGroupIndex];
-            }
+          const previousGroupIndex = Math.floor((currentImageIndex - 1) / 4);
+          if (userAnswers[currentImageIndex - 1] !== correctAnswers[currentImageIndex - 1]) {
+            groupErrors[currentGroupIndex] += 1;
+          } else {
+            groupErrors[currentGroupIndex] = groupErrors[previousGroupIndex];
+          }
         }
-    
-        // Resto do seu código para atualizar respostas e botões
+      
         updateButtons();
-    
-        currentImageIndex++; // Mover para a próxima imagem após a atualização
-    }
-    
-    function updateButtons() {
+      
+        currentImageIndex++;
+        updateProgress(); // Atualize a barra de progresso
+      }
+      
+      function updateButtons() {
         const optionsForImage = optionsPerImage[currentImageIndex];
-    
-        $(".btn-1").each(function(index) {
-            const button = $(this);
-            const optionForImage = optionsForImage[index];
-    
-            button.text(optionForImage);
-    
-            if (userAnswers[currentImageIndex] === optionForImage) {
-                button.addClass("selected");
-            } else {
-                button.removeClass("selected");
-            }
+      
+        $(".btn-1").each(function (index) {
+          const button = $(this);
+          const optionForImage = optionsForImage[index];
+      
+          button.text(optionForImage);
+      
+          if (userAnswers[currentImageIndex] === optionForImage) {
+            button.addClass("selected");
+          } else {
+            button.removeClass("selected");
+          }
         });
-    }
-    
-    function getDiagnosisMessage() {
+      }
+      
+      function getDiagnosisMessage() {
         const maxErrors = Math.max(...groupErrors);
         const groupIndexWithMaxErrors = groupErrors.indexOf(maxErrors);
-    
+      
         if (maxErrors === 0) {
-            return "Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.";
+          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
         }
-    
-        // Remova a parte que adiciona o nome do grupo após o ponto final
-        return `${groupErrorMessages[maxErrors]} ${groupNames[groupIndexWithMaxErrors]}.`;
-    }
-    
-    function showTestCompletion() {
-        // Calcular e exibir as respostas corretas/incorretas
+      
+        return `${groupErrorMessages[maxErrors]} ${groupNames[groupIndexWithMaxErrors]}.`.replace('Diagnóstico:', '');
+      }
+      
+      function showTestCompletion() {
         const resultsElement = document.getElementById('results');
         resultsElement.innerHTML = '<strong>Resultados:</strong><br>';
-    
-        let anyIncorrectAnswer = false;  // Variável para rastrear respostas incorretas
-    
+      
+        let anyIncorrectAnswer = false;
+      
         for (let groupIndex = 0; groupIndex < 4; groupIndex++) {
-            // Exiba respostas para imagens no grupo
-            for (let i = groupIndex * 4; i < (groupIndex + 1) * 4; i++) {
-                const userAnswer = userAnswers[i];
-                const isCorrect = correctAnswers[i] === userAnswer;
-                const resultText = isCorrect ? 'Correta' : 'Incorreta';
-                resultsElement.innerHTML += `Pergunta ${i + 1}: ${userAnswer} - ${resultText}<br>`;
-    
-                // Verifique se há alguma resposta incorreta
-                if (!isCorrect) {
-                    anyIncorrectAnswer = true;
-                }
+          for (let i = groupIndex * 4; i < (groupIndex + 1) * 4; i++) {
+            const userAnswer = userAnswers[i];
+            const isCorrect = correctAnswers[i] === userAnswer;
+            const resultText = isCorrect ? 'Correta' : 'Incorreta';
+            resultsElement.innerHTML += `Pergunta ${i + 1}: ${userAnswer} - ${resultText}<br>`;
+      
+            if (!isCorrect) {
+              anyIncorrectAnswer = true;
             }
+          }
         }
-    
-        // Mostrar a mensagem de diagnóstico se houver respostas incorretas ou todas as respostas forem corretas
+      
         let maxErrors = -1;
         let groupIndexWithMaxErrors = -1;
-    
+      
         for (let groupIndex = 0; groupIndex < 4; groupIndex++) {
-            if (groupErrors[groupIndex] > maxErrors) {
-                maxErrors = groupErrors[groupIndex];
-                groupIndexWithMaxErrors = groupIndex;
-            }
+          if (groupErrors[groupIndex] > maxErrors) {
+            maxErrors = groupErrors[groupIndex];
+            groupIndexWithMaxErrors = groupIndex;
+          }
         }
-    
+      
         if (groupIndexWithMaxErrors !== -1 && anyIncorrectAnswer) {
-            // Exiba a mensagem do grupo com mais erros
-            showGroupErrorMessage(groupIndexWithMaxErrors);
+          showGroupErrorMessage(groupIndexWithMaxErrors);
         }
-    
-        // Armazene as respostas e diagnóstico no LocalStorage
-        localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
-        localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
-        localStorage.setItem('groupErrors', JSON.stringify(groupErrors));
-        localStorage.setItem('groupDiagnosis', groupNames[groupIndexWithMaxErrors]);
-        localStorage.setItem('diagnosis', getDiagnosisMessage());
-    
-        // Redirecione para a página de resultados
-        window.location.href = 'resultado.html';
-    }
-    
-    $(".btn-1").on("click", function() {
+        
+        // Adicione a verificação para o caso de todos os erros
+        if (maxErrors === 16) { // Número total de perguntas
+          const errorMessageElement = document.getElementById('diagnosis-container');
+          errorMessageElement.innerHTML = "Você foi diagnosticado com traços muito fortes de daltonismo. Use nossa extensão para cobrir os problemas durante sua navegação Web, porém, é altamente recomendado consultar um profissional para começar o melhor tratamento para o seu caso.";
+          // Também pode redirecionar para outra página, se desejar.
+        } else {
+          localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+          localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
+          localStorage.setItem('groupErrors', JSON.stringify(groupErrors));
+          localStorage.setItem('groupDiagnosis', groupNames[groupIndexWithMaxErrors]);
+          localStorage.setItem('diagnosis', getDiagnosisMessage());
+      
+          window.location.href = 'resultado.html';
+        }
+      }
+      
+      $(".btn-1").on("click", function () {
         const buttonText = $(this).text();
-        userAnswers[currentImageIndex - 1] = buttonText; // Corrija o índice
+        userAnswers[currentImageIndex - 1] = buttonText;
         changeImage(buttonText);
-    });
-    
-    // Inicialize a primeira imagem e botões
-    changeImage();
-     
+      });
+      
+      function updateProgressBar() {
+        const maxErrors = Math.max(...groupErrors);
+        const totalQuestions = correctAnswers.length;
+        const progressPercentage = ((totalQuestions - maxErrors) / totalQuestions) * 100;
+      
+        const progressBar = document.getElementById("progress-bar");
+        progressBar.style.width = progressPercentage + "%";
+      }
+      
+      function updateProgress() {
+        updateProgressBar();
+      }
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        updateProgress();
+      });
+      
+      changeImage();
     
 });
