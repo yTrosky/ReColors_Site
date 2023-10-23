@@ -324,10 +324,10 @@ ul{
     line-height: 50px;
 }
 .home-img img{
-    max-width: 450px;
+    max-width: 250px;
     width: 100%;
     box-shadow: var(--shadow-black-100);
-    border-radius: 32px;
+    border-radius: 8px;
     animation: bounceTop_01 3s ease infinite;
 }
 .home-img{
