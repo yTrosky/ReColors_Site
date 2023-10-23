@@ -336,8 +336,8 @@ ul{
 .home-img .circle{
     position: absolute;
     z-index: 1;
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     border:1px solid rgba(255,255,255,0.2);
     border-radius: 50%;
     top: 50%;
@@ -351,9 +351,9 @@ ul{
     width: 60px;
     background-color: rgba(255,255,255,0.4);
     border-radius: 50%;
-    left: 65px;
-    top: 65px;
-    transform-origin: 235px 235px;
+    left: 30px;
+    top: 30px;
+    transform-origin: 170px 170px;
     animation: spin_01 10s linear infinite;
 }
 /* ---------------------------------
