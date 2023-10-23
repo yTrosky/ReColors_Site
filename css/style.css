@@ -1041,7 +1041,7 @@ ul{
 /* ---------------------------------
    RESPONSIVO PAGE 2
 ----------------------------------*/
-@media (max-width: 1185px) {
+@media (max-width: 1199px) {
 
     .custom-button {
         width: 100%;
@@ -1057,12 +1057,20 @@ ul{
         max-width: 100%;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
         margin-left: 10px; /* Adicione margem esquerda */
+    }
+
+    .section-title{
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-right: 395px;
     }
     
 }
 
-
-@media (max-width: 834px){
+@media (max-width: 853px){
     .custom-button {
         width: 100%;
         font-size: 18px;
@@ -1079,6 +1087,29 @@ ul{
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
         margin-left: -100px; /* Adicione margem esquerda */
     }
+
+
+}
+
+@media (max-width: 767px){
+    .custom-button {
+        width: 100%;
+        font-size: 18px;
+        margin-right: 0; /* Remova a margem direita */
+        margin-left: -200px; /* Adicione margem esquerda */
+        margin-bottom: 20px;
+
+    }
+
+    .test-image img {
+        border-radius: 50%;
+        width: 350px;
+        max-width: 100%;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+        margin-left: -200px; /* Adicione margem esquerda */
+    }
+    
+    
 }
 
 
