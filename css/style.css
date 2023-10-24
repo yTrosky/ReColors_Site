@@ -43,14 +43,9 @@ body.dark{
     --shadow-black-100:var(--shadow-black-300);
     --black-alpha-100: rgba(255,255,255,0.05);
     --black-900: #fff;
-    --black-400: #bbb;
+    --black-400: #bbb;  
     --main-color: var(--color-3);
 }
-.logo {
-    width: 200px;
-    margin: 0; 
-    padding: 0; 
-  }
 *{
     margin:0;
     padding:0;
@@ -279,7 +274,11 @@ ul{
 .navbar .nav-item .nav-link:hover:before{
     transform: scale(1);
 }
-
+.logo {
+    width: 200px;
+    margin: 0; 
+    padding: 0; 
+  }
 /* ---------------------------------
    HOMEE
 ----------------------------------*/
@@ -927,7 +926,7 @@ ul{
 .toggle-theme{
     position: fixed;
     right: 0;
-    top: calc(50% - 20px);
+    top: calc(20% - 40px);
     height: 40px;
     width: 40px;
     background-color: var(--dark-to-main-color);
@@ -943,11 +942,15 @@ ul{
     line-height: 40px;
 }
 
+body.dark {
+    background-color: var(--bg-dark); /* Cor de fundo escura /
+    color: white; / Cor do texto clara */
 
+}
 
 
 /* ---------------------------------
-   RESPONSIVO
+   RESPONSIVO INDEX
 ----------------------------------*/
 @media(max-width: 991px){
     .navbar-toggler{
@@ -1037,68 +1040,6 @@ ul{
     }
 }
 
-/* ---------------------------------
-   RESPONSIVO PAGE 2
-----------------------------------*/
-@media (max-width: 1199px) {
-
-    .custom-button {
-
-        margin-bottom: 20px;
-    }
-
-
-
-    .custom-title{
-        white-space: nowrap;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-right: 395px;
-    }
-    
-}
-
-
-@media (max-width: 853px){
-    .custom-button {
-
-        margin-left: -100px;
-
-
-    }
-
-    .test-image img {
-
-        margin-left: -100px; 
-    }
-
-
-}
-
-@media (max-width: 767px){
-    .custom-button {
-
-        margin-left: -200px; 
-
-
-    }
-
-    .test-image img {
-
-        margin-left: -200px;
-    }
-    
-    
-}
-
-@media (max-width: 767px){
-
-}
-
-
-
-
 
 
 /* --------------------------------------------------------
@@ -1112,54 +1053,43 @@ PAGINA DOIS
 
 
 ---------------------------------------------------------*/
+
+
 /* ---------------------------------
   Teste CSS
 --------------------------------*/
 
 
 
-.section-title h1{
-    color: #ffffff;
-    margin-left: 400px;
-    margin-top: 76px;
-    font-weight: 700;
-    font-size: 45px;
 
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.section-title p{
-    color: #ffffff;
-    margin-left: 400px;
-    margin-top: 30px;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 28px;
+
+.test-image {
+    max-width: 400px; /* Adjust the maximum width to make the image smaller */
+    margin: 20px 0;
 }
-.choices{
-    margin-left: 495px;
-    margin-top: 100px;
+
+.test-image img {
+    border-radius: 50%;
+}
+
+.choices {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .custom-button {
-    width: 260px;
-    font-size: 24px;
-    margin-right: 30px;
+    width: 100%; /* Make the button full-width */
+    font-size: 35px; /* Adjust the font size as needed */
+    margin: 5px 0; /* Add margin to separate the buttons */
 }
 
-.test-image{
-    animation: bounceTop_01 3s ease infinite;
-    max-width: 450px;
-    width: 100%;
-    margin-top: -250px;
-    margin-bottom: 20px;
-    margin-left: 100px;
-    border-radius: 50%;
-}
-.test-image img {
-    border-radius: 50%;
-    width: 350px;
-    max-width: 100%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
-}
+
 /* --------------------------------------------------------
                                                 
 
