@@ -1,4 +1,5 @@
-![logo](https://github.com/yTrosky/ReColors_Site/assets/92826678/95d07228-26e8-4369-8e67-6fecef64edd0)
+![1](https://github.com/yTrosky/ReColors_Site/assets/92826678/6b25b77b-9e69-4036-bc6d-53d01fdaf5a8)
+
 # ReColors_Site
 
 RECOLORS WEBSITE IS A PROJECT MADE BY:
