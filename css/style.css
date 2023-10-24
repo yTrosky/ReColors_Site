@@ -941,12 +941,22 @@ ul{
 .toggle-theme i{
     line-height: 40px;
 }
-
 body.dark {
-    background-color: var(--bg-dark); /* Cor de fundo escura /
-    color: white; / Cor do texto clara */
+    background-color: var(--bg-dark); /* Define o fundo escuro */
+    color: white;
 
 }
+body.dark h3 {
+    color: white; /* Define a cor do título apenas no modo escuro */
+}
+body.dark .accordion-header h3 {
+    color: white; /* Define a cor do título apenas no modo escuro */
+}
+
+body.dark #diagnosis-container p{
+    color: white; /* Define a cor do texto do diagnóstico apenas no modo escuro */
+}
+
 
 
 /* ---------------------------------
@@ -1216,23 +1226,17 @@ PAGINA TRES
 /* ---------------------------------
    DIAGNOSTICO(RESULTADO)
 ---------------------------------*/
-.diag-image{
+.diag-image {
     max-width: 450px;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 4px;
-    margin-left: 80px;
-    border-radius: 50%;
-    display: inline;
+    margin: 0 auto; /* Centraliza horizontalmente a imagem */
+
+    display: block; /* Define a imagem como bloco para remover espaço extra */
     animation: bounceTop_01 3s ease infinite;
 }
-
 .diag-image img{
     border-radius: 50%;
-    width: 300px;
-    max-width: 100%;
 }
-
 .diagnosis {
     text-align: center;
     font-family: Arial, sans-serif;
