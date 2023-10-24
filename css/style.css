@@ -949,6 +949,9 @@ body.dark {
 body.dark h3 {
     color: white; /* Define a cor do título apenas no modo escuro */
 }
+body.dark h4 {
+    color: black; /* Define a cor do título apenas no modo escuro */
+}
 body.dark .accordion-header h3 {
     color: white; /* Define a cor do título apenas no modo escuro */
 }
