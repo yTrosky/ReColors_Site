@@ -85,7 +85,7 @@ ul{
     border-radius: 30px;
     color: #ffffff;
     font-size: 16px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     transition: all 0.5s ease;
     box-shadow: var(--shadow-black-100);
     font-weight: 500;
@@ -173,7 +173,7 @@ ul{
     font-size: 40px;
     color: var(--black-900 );
     font-weight: 700;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     text-align: center;
     margin: 0;
 } 
@@ -246,14 +246,14 @@ ul{
     font-size: 30px;
     color: #ffffff;
     font-weight: 500; 
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 .navbar .nav-item{
     margin-left: 40px;
 }
 .navbar .nav-item .nav-link{
   color:#ffffff;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-size: 16px;
   font-weight: 400;
   padding: 5px 0;
@@ -492,7 +492,7 @@ ul{
     margin: 0 0 20px;
     color: var(--black-900);
     font-weight: 500;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 .features .feature-item p{
     font-size: 16px;
@@ -579,7 +579,7 @@ ul{
     font-size: 35px;
     color: var(--black-900);
     font-weight: 700;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     text-align: center;
     margin: 0;
     position: absolute;
@@ -666,7 +666,7 @@ ul{
     color: var(--black-900);
     margin: 20px 0;
     font-weight: 500;
-    text-transform: capitalize;
+   /*text-transform: capitalize;*/
 }
 .app-download-item p{
     font-size: 16px;
@@ -712,7 +712,7 @@ ul{
     font-size: 22px;
     font-weight: 500;
     color: var(--black-900);
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 .how-it-works-item p{
     font-size: 16px;
@@ -738,14 +738,14 @@ ul{
     color: var(--black-900);
     font-weight: 500;
     margin: 15px 0 8px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 .team-item span{
     display: block;
     font-size: 16px;
     font-weight: 300;
     color: var(--black-400);
-    text-transform: capitalize;
+   /*text-transform: capitalize;*/
 }
 /* ---------------------------------
    PARTE DS PERGUNTAS FREQUENTES
@@ -884,7 +884,7 @@ ul{
     font-weight: 500;
     color: #ffffff;
     margin: 0 0 25px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 .footer-col p{
     font-size: 16px;
@@ -904,7 +904,7 @@ ul{
     color: rgba(255,255,255,0.9);
     font-weight: 300;
     display: block;
-    text-transform: capitalize;
+   /*text-transform: capitalize;*/
     text-decoration: none;
     transition: all 0.5s ease;
 }
