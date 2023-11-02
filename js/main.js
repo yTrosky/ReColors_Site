@@ -293,7 +293,7 @@ $(document).ready(function() {
         const groupIndexWithMaxErrors = groupErrors.indexOf(maxErrors);
       
         if (maxErrors === 0) {
-          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
+          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema na visualização de cores é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
         }
       
         return `${groupErrorMessages[maxErrors]} ${groupNames[groupIndexWithMaxErrors]}.`.replace('Diagnóstico:', '');
