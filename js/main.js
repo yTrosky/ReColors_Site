@@ -227,7 +227,7 @@ $(document).ready(function() {
         const allAnswersIncorrect = groupErrors[groupIndex] === 4;
       
         if (errorsInGroup === 0 && isLastImageCorrect) {
-          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
+          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema na visualização de cores é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
         } else if (errorsInGroup === 1 && isLastImageCorrect) {
           return groupErrorMessages[1];
         } else if (errorsInGroup === 2 && isLastImageCorrect) {
