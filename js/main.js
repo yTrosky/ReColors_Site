@@ -69,7 +69,24 @@ $(document).ready(function() {
             }
         }
     });
+    /*---------------------- depoimentos carousel ----------------- */
 
+    $('.testimonials-carousel').owlCarousel({
+      loop:false,
+      margin:0,
+      responsiveClass:false,
+      responsive:{
+          0:{
+              items:1,
+          },
+          600:{
+              items:2,
+          },
+          1000:{
+              items:3,
+          }
+      }
+  });
 
     /*---------------------- equipe carousel ----------------- */
 
@@ -223,11 +240,11 @@ $(document).ready(function() {
         const isLastImageCorrect =
           userAnswers[lastImageInGroup] === correctAnswers[lastImageInGroup];
       
-        // Verificar se todas as respostas no grupo estão incorretas
+        
         const allAnswersIncorrect = groupErrors[groupIndex] === 4;
       
         if (errorsInGroup === 0 && isLastImageCorrect) {
-          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema na visualização de cores é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
+          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
         } else if (errorsInGroup === 1 && isLastImageCorrect) {
           return groupErrorMessages[1];
         } else if (errorsInGroup === 2 && isLastImageCorrect) {
@@ -268,7 +285,7 @@ $(document).ready(function() {
         updateButtons();
       
         currentImageIndex++;
-        updateProgress(); // Atualize a barra de progresso
+        updateProgress(); 
       }
       
       function updateButtons() {
@@ -293,7 +310,7 @@ $(document).ready(function() {
         const groupIndexWithMaxErrors = groupErrors.indexOf(maxErrors);
       
         if (maxErrors === 0) {
-          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema na visualização de cores é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
+          return `Você conseguiu identificar todos os números exibidos no teste. A probabilidade de você ter algum problema de visão é muito baixa. Caso esteja tendo algum problema na visão que não foi identificado no teste, é recomendado ir a um especialista. Também pode usar nossa extensão como auxílio durante sua navegação.`;
         }
       
         return `${groupErrorMessages[maxErrors]} ${groupNames[groupIndexWithMaxErrors]}.`.replace('Diagnóstico:', '');
@@ -332,11 +349,11 @@ $(document).ready(function() {
           showGroupErrorMessage(groupIndexWithMaxErrors);
         }
         
-        // Adicione a verificação para o caso de todos os erros
-        if (maxErrors === 16) { // Número total de perguntas
+       
+        if (maxErrors === 16) { 
           const errorMessageElement = document.getElementById('diagnosis-container');
           errorMessageElement.innerHTML = "Você foi diagnosticado com traços muito fortes de daltonismo. Use nossa extensão para cobrir os problemas durante sua navegação Web, porém, é altamente recomendado consultar um profissional para começar o melhor tratamento para o seu caso.";
-          // Também pode redirecionar para outra página, se desejar.
+         
         } else {
           localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
           localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
