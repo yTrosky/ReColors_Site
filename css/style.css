@@ -65,7 +65,7 @@ ul{
     border-radius: 30px;
     color: var(--main-color);
     font-size: 16px;
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
     transition: all 0.5s ease;
     box-shadow: var(--shadow-black-300);
     font-weight: 500;
@@ -85,7 +85,7 @@ ul{
     border-radius: 30px;
     color: #ffffff;
     font-size: 16px;
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
     transition: all 0.5s ease;
     box-shadow: var(--shadow-black-100);
     font-weight: 500;
@@ -173,7 +173,7 @@ ul{
     font-size: 40px;
     color: var(--black-900 );
     font-weight: 700;
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
     text-align: center;
     margin: 0;
 } 
@@ -246,14 +246,14 @@ ul{
     font-size: 30px;
     color: #ffffff;
     font-weight: 500; 
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
 .navbar .nav-item{
     margin-left: 40px;
 }
 .navbar .nav-item .nav-link{
   color:#ffffff;
-  /*text-transform: capitalize;*/
+  text-transform: capitalize;
   font-size: 16px;
   font-weight: 400;
   padding: 5px 0;
@@ -492,7 +492,7 @@ ul{
     margin: 0 0 20px;
     color: var(--black-900);
     font-weight: 500;
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
 .features .feature-item p{
     font-size: 16px;
@@ -579,7 +579,7 @@ ul{
     font-size: 35px;
     color: var(--black-900);
     font-weight: 700;
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
     text-align: center;
     margin: 0;
     position: absolute;
@@ -666,7 +666,7 @@ ul{
     color: var(--black-900);
     margin: 20px 0;
     font-weight: 500;
-   /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
 .app-download-item p{
     font-size: 16px;
@@ -678,6 +678,9 @@ ul{
 /* ---------------------------------
    COMO FUNCIONA
 ----------------------------------*/
+.how-it-works{
+    background-color: var(--black-100);
+}
 .how-it-works-item{
     padding: 30px;
     text-align: center;
@@ -712,7 +715,7 @@ ul{
     font-size: 22px;
     font-weight: 500;
     color: var(--black-900);
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
 .how-it-works-item p{
     font-size: 16px;
@@ -721,6 +724,67 @@ ul{
     color: var(--black-400);
     line-height: 26px;
 }
+/* ---------------------------------
+  OPNIOES, TESTEMUNHAS, FEEDBACKS
+--------------------------------*/
+.testimonials-item{
+    margin: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow-black-100);
+    border-radius: 10px;
+    text-align: center;
+}
+.testimonials-item .img-box{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    margin-bottom: 30px;
+    border: 4px solid var(--main-color);
+    border-radius: 50%;
+    position: relative;
+}
+.testimonials-item .img-box img{
+    border-radius: 50%;
+    width: 100%;
+}
+.testimonials-item .img-box i{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    left: calc(100% - 15px);
+    top: calc(50% - 15px);
+}
+.testimonials-item p{
+    font-size: 18px;
+    margin: 0 0 20px;
+    color: var(--black-400);
+    line-height: 26px;
+    font-weight: 400;
+}
+.testimonials-item h3{
+    font-size: 22px;
+    color: var(--black-900);
+    margin: 0 0 5px;
+    text-transform: capitalize;
+}
+.testimonials-item .rating{
+    margin-top: 10px;
+}
+.testimonials-item .rating i{
+    display: inline-block;
+    font-size: 16px;
+    color: var(--color-2);
+}
+
+
+
+
 /* ---------------------------------
    PARTE DOA EQUIPE
 ----------------------------------*/
@@ -738,14 +802,14 @@ ul{
     color: var(--black-900);
     font-weight: 500;
     margin: 15px 0 8px;
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
 .team-item span{
     display: block;
     font-size: 16px;
     font-weight: 300;
     color: var(--black-400);
-   /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
 /* ---------------------------------
    PARTE DS PERGUNTAS FREQUENTES
@@ -884,7 +948,7 @@ ul{
     font-weight: 500;
     color: #ffffff;
     margin: 0 0 25px;
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
 .footer-col p{
     font-size: 16px;
@@ -904,7 +968,7 @@ ul{
     color: rgba(255,255,255,0.9);
     font-weight: 300;
     display: block;
-   /*text-transform: capitalize;*/
+    text-transform: capitalize;
     text-decoration: none;
     transition: all 0.5s ease;
 }
@@ -942,22 +1006,22 @@ ul{
     line-height: 40px;
 }
 body.dark {
-    background-color: var(--bg-dark); /* Define o fundo escuro */
+    background-color: var(--bg-dark); 
     color: white;
 
 }
 body.dark h3 {
-    color: white; /* Define a cor do título apenas no modo escuro */
+    color: white; 
 }
 body.dark h4 {
-    color: black; /* Define a cor do título apenas no modo escuro */
+    color: black; 
 }
 body.dark .accordion-header h3 {
-    color: white; /* Define a cor do título apenas no modo escuro */
+    color: white; 
 }
 
 body.dark #diagnosis-container p{
-    color: white; /* Define a cor do texto do diagnóstico apenas no modo escuro */
+    color: white; 
 }
 
 
@@ -1083,7 +1147,7 @@ PAGINA DOIS
 }
 
 .test-image {
-    max-width: 400px; /* Adjust the maximum width to make the image smaller */
+    max-width: 400px; 
     margin: 20px 0;
 }
 
@@ -1097,9 +1161,9 @@ PAGINA DOIS
 }
 
 .custom-button {
-    width: 100%; /* Make the button full-width */
-    font-size: 35px; /* Adjust the font size as needed */
-    margin: 5px 0; /* Add margin to separate the buttons */
+    width: 100%; 
+    font-size: 35px; 
+    margin: 5px 0;
 }
 
 
@@ -1232,9 +1296,9 @@ PAGINA TRES
 .diag-image {
     max-width: 450px;
     width: 100%;
-    margin: 0 auto; /* Centraliza horizontalmente a imagem */
+    margin: 0 auto;
 
-    display: block; /* Define a imagem como bloco para remover espaço extra */
+    display: block; 
     animation: bounceTop_01 3s ease infinite;
 }
 .diag-image img{
@@ -1271,4 +1335,5 @@ PAGINA TRES
     margin-top: 25px;
     margin-bottom: 0px;
 }
+
 
